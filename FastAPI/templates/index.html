@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Quiz App</title>
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- MAIN SECTION  -->
+    <div class="mainDiv d-flex justify-content-center align-items-center">
+        <div class="askDiv">
+            <h3 class="text-center">Welcome To Online Quiz Application</h3>
+            
+            <form method="post">
+                <label for="category">Choose Questions Category:</label>
+                <select name="category" id="category">
+                    <option value="Animals">Animals</option>
+                    <option value="Films">Films</option>
+                    <option value="Music">Music</option>
+                    <option value="History">History</option>
+                </select>
+
+                <label for="quiz_type">Define Quiz Type:</label>
+                <select name="quiz_type" id="quiz_type">
+                    <option value="True/False">True/False</option>
+                    <option value="Multiple Choice">Multiple Choice</option>
+                </select>
+
+                <label for="quantity">Define Questions Quantity:</label>
+                <select name="quantity" id="quantity">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="10">15</option>
+                </select>
+
+                <button type="submit">Start Quiz</button>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}
