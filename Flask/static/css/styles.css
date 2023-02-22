@@ -1,0 +1,61 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+}
+
+/* INDEX PAGE SECTION */
+.mainDiv {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #d9daddbe;
+}
+.askDiv {
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    background-color: #c8cad6;
+    border-radius: 5px;
+    border: 2px solid #6f7599;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.askDiv form {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+.askDiv form label {
+    box-sizing: border-box;
+    padding-left: 3%;
+    width: 60%;
+    margin: 5px 0;
+}
+.askDiv form select {
+    width: 35%;
+    margin: 5px 0;
+    text-align: center;
+    border: 1px solid #49517e;
+    border-radius: 5px;
+}
+.askDiv form button {
+    border: 2px solid #2B3467;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #49517e;
+    color: white;
+    position: relative;
+    left: 25%;
+    margin-top: 20px;
+}
+.askDiv form button:hover {
+    background-color: #2B3467;
+}
+.askDiv form button:active {
+    top: 2px;
+}

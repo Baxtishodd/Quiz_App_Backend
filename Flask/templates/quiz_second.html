@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+      <title>Quiz App</title>
+{% endblock %}
+
+{% block css_styles %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="mainDiv">
+        <h1 class="text-center fw-bold">Take Your Time</h1>
+        <h3 class="text-center categoryDiv">Check Knowledge About - <span>{{ name }}</span></h3>
+        <hr>
+        <div class="quizDiv">
+            <!-- this part will be auto generated -->
+            {% for item in data %}
+            <div class="d-flex flex-column mt-5 myDiv">
+                <h4 class="mb-2">{{ item.question | safe }}</h4>
+                <div class="d-flex justify-content-between">
+                    <div class="buttonDiv">
+                        <button>{{ item.wrong[0] | safe }}</button>
+                    </div>
+                    <div class="buttonDiv">
+                        <button>{{ item.wrong[1] | safe }}</button>
+                    </div>
+                </div>
+                <h6>correct answer: <span></span></h6>
+                <input type="hidden" class="hold_correct" name="hold_correct" value="{{ item.correct | safe }}">
+            </div>
+            {% endfor %}
+
+        </div>
+        <button class="submit">See Results</button>
+        <div class="mt-5 mb-3">
+            <h1 class="finalScore text-center"></h1>
+        </div>
+    </div>
+{% endblock %}
+
+{% block logic %}
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}
